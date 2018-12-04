@@ -25,7 +25,7 @@ public class Main {
     public static void validateVolume(Bottle bottle, Drink drink) {
         if (drink.getLiquidWeight() == 500.00) {//вместо веса жижи, можно утановить переменную тип к каждому новому алкоголю и сетить по типу.
             drink.setLiquidWeight(drink.getLiquidWeight() + 50.00);
-            System.out.println("Beer with foam is " + drink.getLiquidWeight());
+            System.out.println("Beer with foam is " + drink.getLiquidWeight());//TODO move to bottle, to method 'fill'. so when you do pour in any liquid (drink) it throws away excess.
         } else if (bottle.getDrink().getLiquidWeight() == bottle.getVOLUME()) {
             System.out.println("Everything is good");
         } else {
