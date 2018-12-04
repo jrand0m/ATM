@@ -54,16 +54,30 @@ public abstract class Bottle {
     }
 
     public void fill(Drink drink) {
-
-        if (drink.getLiquidWeight() <= getVOLUME()) {
+//        if (drink.getLiquidWeight() <= getVOLUME()) {
+//            this.drink = drink;
+//        } else {
+//            System.out.println("The waight of liquid is " + drink.getLiquidWeight() + " and volume of bottle is " + getVOLUME());
+//            System.out.println("Overdose!!! Liquid amount changed from " + drink.getLiquidWeight() + " to " + getVOLUME());
+//            drink.setLiquidWeight(getVOLUME());
+//            //TODO если не помещается, то изменить вливаемый дринк до объёма который могу поместить
+//        }
+        if (drink.getLiquidWeight() == 500.00) {//вместо веса жижи, можно утановить переменную тип к каждому новому алкоголю и сетить по типу.
+            drink.setLiquidWeight(drink.getLiquidWeight() + 50.00);
+            System.out.println("Beer with foam is " + drink.getLiquidWeight());//TODO move to bottle, to method 'fill'. so when you do pour in any liquid (drink) it throws away excess.
             this.drink = drink;
-        } else {
-            System.out.println("The waight of liquid is " + drink.getLiquidWeight() + " and volume of bottle is " + getVOLUME());
-            System.out.println("Overdose!!! Liquid amount changed from " + drink.getLiquidWeight() + " to " + getVOLUME());
+        } else if (getDrink().getLiquidWeight() == getVOLUME()) {
+            System.out.println("Everything is good");
+        } else if (getDrink().getLiquidWeight() != getVOLUME()) {
             drink.setLiquidWeight(getVOLUME());
-            //TODO если не помещается, то изменить вливаемый дринк до объёма который могу поместить
+            System.out.println("Everything is good");
+        } else {
+            System.out.println("try more");
         }
     }
+
+
+
 
     public abstract void draw();
 
